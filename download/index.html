@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>下载 · Conexuai</title>
+<meta name="description" content="输入邀请码获取 Conexuai 内测安装包的限时下载链接，并按页面公布的 SHA-256 自行校验。">
+<link rel="canonical" href="https://conexuai.com/download/">
+<link rel="alternate" hreflang="zh-CN" href="https://conexuai.com/download/">
+<link rel="alternate" hreflang="en" href="https://conexuai.com/en/download/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="下载 · Conexuai">
+<meta property="og:description" content="输入邀请码获取 Conexuai 内测安装包的限时下载链接，并按页面公布的 SHA-256 自行校验。">
+<meta property="og:url" content="https://conexuai.com/download/">
+<meta property="og:image" content="https://conexuai.com/assets/img/og.png">
+<link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+<link rel="stylesheet" href="/assets/tokens.css">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<header class="site-head">
+  <a class="brand" href="/">
+    <picture>
+      <source srcset="/assets/img/wordmark-reverse.svg" media="(prefers-color-scheme: dark)">
+      <img src="/assets/img/wordmark-primary.svg" alt="Conexuai" height="20">
+    </picture>
+  </a>
+  <nav>
+        <a href="/">首页</a>
+        <a href="/apply/">申请内测</a>
+        <a href="/download/" aria-current="page">下载</a>
+        <a href="/security/">安全与隐私</a>
+        <a href="/terms/">内测协议</a>
+  </nav>
+  <a class="lang" href="/en/download/" hreflang="en">EN</a>
+</header>
+<main id="main">
+  <div class="wrap prose">
+    <h1>下载</h1>
+    <p class="hint">内测包只发给已通过审核的测试者。没有邀请码就没有下载链接——这不是防君子，是水印溯源的前提。</p>
+
+    <form class="card" method="post" action="/api/redeem" id="redeem-form">
+      <label class="req" for="code">邀请码</label>
+      <input type="text" id="code" name="code" required maxlength="24" autocomplete="off"
+             spellcheck="false" placeholder="CXA-XXXX-XXXX" pattern="[A-Za-z0-9\- ]{8,24}">
+      <p class="hint">大小写与连字符都不影响，随便怎么抄都行。</p>
+      <p><button class="btn btn-primary" type="submit">取下载链接</button></p>
+    </form>
+
+    <div id="redeem-out" hidden></div>
+
+    <h2>装之前请先校验</h2>
+    <p>下载链接是限时的（30 分钟），过期回这一页重新兑一次即可。取到包之后，<strong>务必</strong>把它的 SHA-256 和页面上给出的值比一遍：</p>
+    <ol>
+      <li>在下载目录按住 Shift 右键，选「在此处打开 PowerShell 窗口」；</li>
+      <li>执行 <code class="hash">Get-FileHash .\Conexuai-Setup-0.5.2.exe -Algorithm SHA256</code>（文件名以你下到的为准）；</li>
+      <li>把输出的 Hash 与本页给出的值逐字符比对，<strong>不一致就不要安装</strong>，请直接联系我们。</li>
+    </ol>
+    <p class="hint">命令提示符里可以用 <code>certutil -hashfile 文件名 SHA256</code>，结果一样。</p>
+
+    <h2>关于这个包</h2>
+    <ul>
+      <li>安装包带<strong>可追溯到你邀请码的数字水印</strong>。外流可溯源，请不要转发（<a href="/terms/">内测协议</a>第 4 条）。</li>
+      <li>Windows 首次运行可能出现 SmartScreen 提示，这与下载渠道无关，只看文件的签名与来源标记。</li>
+      <li>数据与卸载去留见<a href="/security/">安全与隐私声明</a>。</li>
+    </ul>
+  </div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <nav>
+        <a href="/apply/">申请内测</a>
+        <a href="/download/">下载</a>
+        <a href="/security/">安全与隐私</a>
+        <a href="/terms/">内测协议</a>
+    </nav>
+    <p>Conexuai · 封闭 Alpha 内测<br>内测期不收费。本站不含任何统计脚本。</p>
+    <p class="legal">Conexuai 及其标识为其所有者的标识。Claude、Codex、Cursor、Kimi、DeepSeek、Grok、Antigravity、GLM 等名称与标识为各自所有者的商标，与本产品无隶属或背书关系。</p>
+  </div>
+</footer>
+<script src="/assets/download.js" defer></script>
+</body>
+</html>

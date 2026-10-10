@@ -1,0 +1,192 @@
+/* ==========================================================================
+ * Conexuai 官网 · 站点样式（唯一一张）
+ * --------------------------------------------------------------------------
+ * 零构建纯静态：没有 npm、没有 node_modules、没有打包器。五页的页头页脚各自重复约 25 行，
+ * 这是刻意付的代价——用一条需要长期维护的构建链去省掉这 125 行，不划算。
+ *
+ * 字体：**不引任何 CDN**。令牌里写的 Outfit / Geist Mono 没有被加载，实际落到系统栈的下一档。
+ * 想真用 Outfit 得自托管字体文件（OFL 许可允许），那会给仓库加几百 KB 二进制，本期不做。
+ *
+ * 两态：只跟随系统 prefers-color-scheme。不放切换器——切换器要 JS +
+ * localStorage + 防闪烁内联脚本，为一个五页宣传站付出的复杂度不成比例。
+ *
+ * 对比度口径与产品侧一致：正文 ≥4.5:1、非文本 ≥3:1；**accent 底上的字用冷炭**
+ * （圣经写的纸白字在 #FF4A1D 上实测 3.35:1 不达标）。
+ * ========================================================================== */
+
+:root {
+  --site-max: 68ch;
+  --site-wide: 1080px;
+  --site-gutter: 16px;
+
+  --bg: var(--color-bg);
+  --fg: var(--color-fg);
+  --muted: var(--color-muted);
+  --border: var(--color-border);
+  --accent: var(--color-accent);
+  --surface: #ffffff;
+  --surface-2: #eff1ef;
+  /* accent 底上的字：冷炭（实测 5.35:1），不是纸白（3.35:1） */
+  --on-accent: #17181a;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: var(--color-bg-inverse);
+    --fg: var(--color-fg-inverse);
+    /* 冷炭底上的 #6B6E73 只有 2.6:1，深色态把中性字提亮到 #9A9EA4（实测 5.4:1） */
+    --muted: #9a9ea4;
+    --border: #2f3134;
+    --surface: #1d1f22;
+    --surface-2: #26282b;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-line-height);
+  /* 手机上不许出现横向滚动：长哈希串靠 overflow-wrap 折行，不靠滚动条 */
+  overflow-wrap: anywhere;
+}
+
+a { color: inherit; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+code, .mono { font-family: var(--font-mono); font-size: var(--type-mono-size); }
+
+/* 键盘用户的跳转锚：不显示，但一按 Tab 就出来 */
+.skip {
+  position: absolute; left: -9999px;
+  background: var(--surface); color: var(--fg);
+  padding: var(--space-3); border: 1px solid var(--border); border-radius: 8px;
+}
+.skip:focus { left: var(--site-gutter); top: var(--site-gutter); z-index: 10; }
+
+.wrap { width: 100%; max-width: var(--site-wide); margin: 0 auto; padding: 0 var(--site-gutter); }
+.prose { max-width: var(--site-max); }
+/* 同一个元素既是 wrap 又是 prose 时，容器保持整幅、由子块各自收到阅读宽度——
+   否则正文页的左边界会比首页往里缩一大截，翻页时整块内容会"跳"一下。 */
+.wrap.prose { max-width: var(--site-wide); }
+.wrap.prose > * { max-width: var(--site-max); }
+.prose h2 { font-size: var(--type-title-size); line-height: var(--type-title-line-height); letter-spacing: var(--type-title-tracking); margin: var(--space-7) 0 var(--space-3); }
+.prose h3 { font-size: 17px; margin: var(--space-6) 0 var(--space-2); }
+.prose li { margin: var(--space-2) 0; }
+.prose ol > li::marker { color: var(--muted); }
+
+/* ---- 页头 ---- */
+/* 手机上分两行：第一行品牌 + 语言，导航整条落到第二行。
+   挤在一行的后果是语言按钮被压成两个字母竖着排，实测 375px 下就会。 */
+.site-head {
+  display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-3) var(--space-4);
+  padding: var(--space-4) var(--site-gutter);
+  border-bottom: 1px solid var(--border);
+}
+.site-head .brand { display: inline-flex; align-items: center; text-decoration: none; }
+.site-head nav { order: 3; width: 100%; display: flex; flex-wrap: wrap; gap: var(--space-4); font-size: var(--type-caption-size); }
+.site-head nav a { color: var(--muted); text-decoration: none; }
+.site-head nav a:hover, .site-head nav a[aria-current="page"] { color: var(--fg); }
+.lang {
+  margin-left: auto; white-space: nowrap;
+  border: 1px solid var(--border); border-radius: 999px;
+  padding: 6px 12px; font-size: 12px; text-decoration: none; color: var(--muted);
+}
+.lang:hover { color: var(--fg); }
+
+/* ---- 页脚 ---- */
+.site-foot {
+  margin-top: var(--space-10);
+  border-top: 1px solid var(--border);
+  padding: var(--space-6) var(--site-gutter);
+  color: var(--muted); font-size: var(--type-caption-size);
+}
+.site-foot nav { display: flex; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-3); }
+.site-foot a { color: inherit; }
+/* 页脚法务行：比页脚正文再小一档。它必须一直在，但不该抢走读者的注意力。 */
+.site-foot .legal { margin: var(--space-3) 0 0; max-width: var(--site-max); font-size: 12px; line-height: 1.6; }
+
+/* ---- 首页 ---- */
+.hero { padding: var(--space-9) 0 var(--space-7); }
+.hero h1 {
+  font-size: var(--type-display-size); line-height: var(--type-display-line-height);
+  letter-spacing: var(--type-display-tracking); font-weight: var(--type-display-weight);
+  margin: 0 0 var(--space-4); max-width: 20ch;
+}
+.hero p { margin: 0 0 var(--space-6); color: var(--muted); max-width: var(--site-max); }
+
+.values { display: grid; gap: var(--space-4); grid-template-columns: 1fr; padding-bottom: var(--space-6); }
+.value { border: 1px solid var(--border); border-radius: 12px; padding: var(--space-5); background: var(--surface); }
+.value h2 { margin: 0 0 var(--space-2); font-size: 17px; }
+.value p { margin: 0; color: var(--muted); font-size: 14px; }
+
+.shots { display: grid; gap: var(--space-4); grid-template-columns: 1fr; padding-bottom: var(--space-8); }
+.shot { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--surface); }
+.shot img { display: block; width: 100%; height: auto; }
+.shot figcaption { padding: var(--space-3) var(--space-4); font-size: var(--type-caption-size); color: var(--muted); }
+/* 截图未到位时的占位。**刻意做成一眼看得出是空位**，不拿示意图冒充实机截图 */
+.shot-todo {
+  display: flex; align-items: center; justify-content: center;
+  aspect-ratio: 16 / 10; background: var(--surface-2);
+  color: var(--muted); font-size: var(--type-caption-size); text-align: center; padding: var(--space-4);
+}
+
+/* ---- 按钮 ---- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 0 var(--space-5);
+  border-radius: 10px; border: 1px solid var(--border);
+  font: inherit; font-size: 15px; text-decoration: none;
+  background: var(--surface); color: var(--fg); cursor: pointer;
+}
+.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 600; }
+.btn:disabled { opacity: .55; cursor: not-allowed; }
+
+/* ---- 表单 ---- */
+form.card { border: 1px solid var(--border); border-radius: 12px; background: var(--surface); padding: var(--space-5); }
+fieldset { border: 0; padding: 0; margin: 0 0 var(--space-6); }
+legend { padding: 0; font-weight: 600; font-size: 15px; margin-bottom: var(--space-2); }
+.hint { color: var(--muted); font-size: var(--type-caption-size); margin: 0 0 var(--space-3); }
+label { display: block; margin: var(--space-2) 0; }
+/* 触摸目标 44px 是下限，不是留白目标；居中对齐，别让方框吊在文字上方 */
+.opt { display: flex; align-items: center; gap: var(--space-3); min-height: 44px; }
+/* 九个选项竖着排要滚小半屏。桌面上两列，手机上还是一列——列数变，触摸目标不变 */
+.opts { display: grid; grid-template-columns: 1fr; gap: 0 var(--space-4); }
+/* min-height 已经给足触摸目标，再叠 label 的上下外边距就是每项白白多 16px */
+.opts .opt { margin: 0; }
+input[type="text"], input[type="email"], textarea, select {
+  width: 100%; min-height: 44px; padding: 10px 12px;
+  border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font: inherit;
+}
+textarea { min-height: 88px; resize: vertical; }
+.req::after { content: " *"; color: var(--accent); }
+
+/* honeypot：给机器人填的，人看不见也 tab 不到 */
+.trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+.notice { border: 1px solid var(--border); border-radius: 10px; padding: var(--space-4); margin: var(--space-4) 0; background: var(--surface-2); font-size: 14px; }
+.notice-bad { border-color: var(--color-danger); }
+.draft { border-left: 3px solid var(--accent); padding-left: var(--space-4); color: var(--muted); font-size: 14px; }
+
+.hash { display: block; padding: var(--space-3); background: var(--surface-2); border-radius: 8px; }
+
+@media (min-width: 720px) {
+  .site-head nav { order: 0; width: auto; margin-left: auto; }
+  .lang { margin-left: 0; }
+  .opts { grid-template-columns: repeat(2, 1fr); }
+  .values { grid-template-columns: repeat(3, 1fr); }
+  .shots { grid-template-columns: repeat(3, 1fr); }
+  .hero h1 { font-size: 52px; }
+}

@@ -1,0 +1,5 @@
+# 站内别名。跨域名的 .ai 302→.com 不在这里做——那是 Cloudflare 的 Redirect Rule，
+# 不经 Pages，也就不需要为第二个域名建第二个站点（设计一页 FC57F4FF §六）。
+/downloads/*  /download/  301
+/apply.html   /apply/     301
+/en/downloads/*  /en/download/  301

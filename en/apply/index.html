@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apply for the beta · Conexuai</title>
+<meta name="description" content="Nine questions to apply for the Conexuai closed Alpha. No third-party form or analytics service.">
+<link rel="canonical" href="https://conexuai.com/en/apply/">
+<link rel="alternate" hreflang="en" href="https://conexuai.com/en/apply/">
+<link rel="alternate" hreflang="zh-CN" href="https://conexuai.com/apply/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Apply for the beta · Conexuai">
+<meta property="og:description" content="Nine questions to apply for the Conexuai closed Alpha. No third-party form or analytics service.">
+<meta property="og:url" content="https://conexuai.com/en/apply/">
+<meta property="og:image" content="https://conexuai.com/assets/img/og.png">
+<link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+<link rel="stylesheet" href="/assets/tokens.css">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <a class="brand" href="/en/">
+    <picture>
+      <source srcset="/assets/img/wordmark-reverse.svg" media="(prefers-color-scheme: dark)">
+      <img src="/assets/img/wordmark-primary.svg" alt="Conexuai" height="20">
+    </picture>
+  </a>
+  <nav>
+        <a href="/en/">Home</a>
+        <a href="/en/apply/" aria-current="page">Apply</a>
+        <a href="/en/download/">Download</a>
+        <a href="/en/security/">Security & Privacy</a>
+        <a href="/en/terms/">Beta Agreement</a>
+  </nav>
+  <a class="lang" href="/apply/" hreflang="zh-CN">中文</a>
+</header>
+<main id="main">
+  <div class="wrap prose">
+    <h1>Apply for the beta</h1>
+    <p class="hint">Nine questions, about two minutes. We review by hand and email your invitation code.</p>
+
+    <form class="card" method="post" action="/api/apply" id="apply-form">
+      <div class="trap" aria-hidden="true"><label>Leave this field empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+
+      <fieldset>
+        <legend>1. AI agents you use regularly</legend>
+        <p class="hint">Select all that apply.</p>
+      <div class="opts">
+        <label class="opt"><input type="checkbox" name="q1_agents" value="claude"><span>Claude</span></label>
+        <label class="opt"><input type="checkbox" name="q1_agents" value="codex"><span>Codex</span></label>
+        <label class="opt"><input type="checkbox" name="q1_agents" value="cursor"><span>Cursor</span></label>
+        <label class="opt"><input type="checkbox" name="q1_agents" value="kimi"><span>Kimi</span></label>
+        <label class="opt"><input type="checkbox" name="q1_agents" value="deepseek"><span>DeepSeek</span></label>
+        <label class="opt"><input type="checkbox" name="q1_agents" value="grok"><span>Grok</span></label>
+        <label class="opt"><input type="checkbox" name="q1_agents" value="antigravity"><span>Antigravity</span></label>
+        <label class="opt"><input type="checkbox" name="q1_agents" value="glm"><span>GLM</span></label>
+        <label class="opt"><input type="checkbox" name="q1_agents" value="other"><span>Other</span></label>
+      </div>
+        <label>Other (please specify)<input type="text" name="q1_other" maxlength="80"></label>
+        <p class="hint">How many of them do you use <strong>at the same time</strong> on one piece of work?</p>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="q1_concurrent" value="1"><span>1</span></label>
+        <label class="opt"><input type="radio" name="q1_concurrent" value="2"><span>2</span></label>
+        <label class="opt"><input type="radio" name="q1_concurrent" value="3plus"><span>3 or more</span></label>
+      </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>2. How you mainly use them</legend>
+        <p class="hint">Select all that apply.</p>
+      <div class="opts">
+        <label class="opt"><input type="checkbox" name="q2_form" value="desktop"><span>Desktop app</span></label>
+        <label class="opt"><input type="checkbox" name="q2_form" value="web"><span>Web</span></label>
+        <label class="opt"><input type="checkbox" name="q2_form" value="ide"><span>Inside an IDE</span></label>
+        <label class="opt"><input type="checkbox" name="q2_form" value="cli"><span>CLI</span></label>
+      </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. Operating system</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="q3_os" value="win11"><span>Windows 11</span></label>
+        <label class="opt"><input type="radio" name="q3_os" value="win10"><span>Windows 10</span></label>
+        <label class="opt"><input type="radio" name="q3_os" value="other"><span>Other</span></label>
+      </div>
+        <label>Other (please specify)<input type="text" name="q3_other" maxlength="80"></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>4. Biggest pain when working with several agents</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="q4_pain" value="paste"><span>Copy-pasting back and forth</span></label>
+        <label class="opt"><input type="radio" name="q4_pain" value="unknown"><span>Not knowing who finished what</span></label>
+        <label class="opt"><input type="radio" name="q4_pain" value="lost"><span>Losing history when switching accounts or machines</span></label>
+        <label class="opt"><input type="radio" name="q4_pain" value="inconsistent"><span>Inconsistent results with nobody correcting them</span></label>
+        <label class="opt"><input type="radio" name="q4_pain" value="other"><span>Other</span></label>
+      </div>
+        <label>Other (please specify)<input type="text" name="q4_other" maxlength="120"></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>5. The one thing you most want this kind of product to solve</legend>
+        <label><textarea name="q5_wish" maxlength="600"></textarea></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>6. If this kind of product were paid, what would you accept</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="q6_pricing" value="onetime"><span>One-off purchase</span></label>
+        <label class="opt"><input type="radio" name="q6_pricing" value="monthly"><span>Monthly subscription</span></label>
+        <label class="opt"><input type="radio" name="q6_pricing" value="yearly"><span>Annual subscription</span></label>
+        <label class="opt"><input type="radio" name="q6_pricing" value="freeonly"><span>Free tier only</span></label>
+      </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>7. Willing to join a 2-week beta and agree to confidentiality</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="q7_join" value="yes"><span>Yes</span></label>
+        <label class="opt"><input type="radio" name="q7_join" value="no"><span>No</span></label>
+      </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>8. Willing to take a 20-minute interview</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="q8_interview" value="yes"><span>Yes</span></label>
+        <label class="opt"><input type="radio" name="q8_interview" value="no"><span>No</span></label>
+      </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>9. Contact</legend>
+        <label class="req">Email<input type="email" name="q9_email" required autocomplete="email" maxlength="160"></label>
+        <label>Country / time zone (optional)<input type="text" name="q9_region" maxlength="80"></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Consent</legend>
+        <label class="opt">
+          <input type="checkbox" name="agree" value="1" required>
+          <span class="req">I have read and accept the <a href="/en/terms/">Beta Agreement</a> and the <a href="/en/security/">Security &amp; Privacy Statement</a></span>
+        </label>
+        <p class="hint">Beta participants will enjoy a discount on the official release (the specific form to be announced separately).</p>
+      </fieldset>
+
+      <div class="cf-turnstile" data-sitekey="" data-appearance="interaction-only"></div>
+
+      <p><button class="btn btn-primary" type="submit">Submit application</button></p>
+      <p class="hint" id="apply-note">You will see a confirmation on this page. We collect only this questionnaire and your email address, through no third-party form or analytics service.</p>
+    </form>
+
+    <h2>What happens next</h2>
+    <ol>
+      <li>Your application is stored in our own Cloudflare KV store and deleted automatically after 180 days.</li>
+      <li><strong>During Alpha nothing is forwarded through any email service</strong>: we read the application list directly and review by hand.</li>
+      <li>If accepted, we email your invitation code and download instructions.</li>
+    </ol>
+    <p class="hint">See section 7 of the <a href="/en/security/">Security &amp; Privacy Statement</a>.</p>
+  </div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <nav>
+        <a href="/en/apply/">Apply</a>
+        <a href="/en/download/">Download</a>
+        <a href="/en/security/">Security & Privacy</a>
+        <a href="/en/terms/">Beta Agreement</a>
+    </nav>
+    <p>Conexuai · Closed Alpha<br>Free during the beta. This site carries no analytics scripts.</p>
+    <p class="legal">Conexuai and its logo are marks of their owner. Claude, Codex, Cursor, Kimi, DeepSeek, Grok, Antigravity, GLM and other names and logos are trademarks of their respective owners; their use here implies no affiliation with, or endorsement by, this product.</p>
+  </div>
+</footer>
+<script src="/assets/apply.js" defer></script>
+</body>
+</html>

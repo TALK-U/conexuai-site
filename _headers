@@ -1,0 +1,12 @@
+# Cloudflare Pages 静态资源头。安全头由 functions/_middleware.js 统一下发，
+# 这里只管缓存——两处各管一摊，避免同一个头在两个地方有两个值。
+
+/assets/*
+  Cache-Control: public, max-age=3600
+
+/assets/img/*
+  Cache-Control: public, max-age=86400
+
+# HTML 不长缓存：文案还在定稿，改了要马上能看见
+/*
+  Cache-Control: public, max-age=300

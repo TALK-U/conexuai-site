@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download · Conexuai</title>
+<meta name="description" content="Redeem your invitation code for a time-limited download link and verify the published SHA-256.">
+<link rel="canonical" href="https://conexuai.com/en/download/">
+<link rel="alternate" hreflang="en" href="https://conexuai.com/en/download/">
+<link rel="alternate" hreflang="zh-CN" href="https://conexuai.com/download/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Download · Conexuai">
+<meta property="og:description" content="Redeem your invitation code for a time-limited download link and verify the published SHA-256.">
+<meta property="og:url" content="https://conexuai.com/en/download/">
+<meta property="og:image" content="https://conexuai.com/assets/img/og.png">
+<link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+<link rel="stylesheet" href="/assets/tokens.css">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <a class="brand" href="/en/">
+    <picture>
+      <source srcset="/assets/img/wordmark-reverse.svg" media="(prefers-color-scheme: dark)">
+      <img src="/assets/img/wordmark-primary.svg" alt="Conexuai" height="20">
+    </picture>
+  </a>
+  <nav>
+        <a href="/en/">Home</a>
+        <a href="/en/apply/">Apply</a>
+        <a href="/en/download/" aria-current="page">Download</a>
+        <a href="/en/security/">Security & Privacy</a>
+        <a href="/en/terms/">Beta Agreement</a>
+  </nav>
+  <a class="lang" href="/download/" hreflang="zh-CN">中文</a>
+</header>
+<main id="main">
+  <div class="wrap prose">
+    <h1>Download</h1>
+    <p class="hint">Beta builds go only to approved testers. No invitation code, no link — that is what makes watermark tracing possible.</p>
+
+    <form class="card" method="post" action="/api/redeem" id="redeem-form">
+      <label class="req" for="code">Invitation code</label>
+      <input type="text" id="code" name="code" required maxlength="24" autocomplete="off"
+             spellcheck="false" placeholder="CXA-XXXX-XXXX" pattern="[A-Za-z0-9\- ]{8,24}">
+      <p class="hint">Case and hyphens do not matter.</p>
+      <p><button class="btn btn-primary" type="submit">Get download link</button></p>
+    </form>
+
+    <div id="redeem-out" hidden></div>
+
+    <h2>Verify before you install</h2>
+    <p>The download link expires after 30 minutes; come back and redeem again if it does. Once you have the file, <strong>always</strong> compare its SHA-256 with the value shown on this page:</p>
+    <ol>
+      <li>Shift + right-click in your downloads folder and choose "Open PowerShell window here";</li>
+      <li>Run <code class="hash">Get-FileHash .\Conexuai-Setup-0.5.2.exe -Algorithm SHA256</code> (use the file name you actually got);</li>
+      <li>Compare the Hash character by character with the value on this page. <strong>If they differ, do not install</strong> — contact us instead.</li>
+    </ol>
+    <p class="hint">In Command Prompt, <code>certutil -hashfile FILENAME SHA256</code> gives the same result.</p>
+
+    <h2>About this build</h2>
+    <ul>
+      <li>The installer carries a <strong>digital watermark traceable to your invitation code</strong>. Please do not forward it (Beta Agreement, clause 4).</li>
+      <li>Windows may show a SmartScreen prompt on first run. This depends on the file's signature and mark-of-the-web, not on where you downloaded it.</li>
+      <li>For data handling and uninstall behaviour see the <a href="/en/security/">Security &amp; Privacy Statement</a>.</li>
+    </ul>
+  </div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <nav>
+        <a href="/en/apply/">Apply</a>
+        <a href="/en/download/">Download</a>
+        <a href="/en/security/">Security & Privacy</a>
+        <a href="/en/terms/">Beta Agreement</a>
+    </nav>
+    <p>Conexuai · Closed Alpha<br>Free during the beta. This site carries no analytics scripts.</p>
+    <p class="legal">Conexuai and its logo are marks of their owner. Claude, Codex, Cursor, Kimi, DeepSeek, Grok, Antigravity, GLM and other names and logos are trademarks of their respective owners; their use here implies no affiliation with, or endorsement by, this product.</p>
+  </div>
+</footer>
+<script src="/assets/download.js" defer></script>
+</body>
+</html>

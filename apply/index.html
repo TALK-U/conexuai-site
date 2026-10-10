@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>申请内测 · Conexuai</title>
+<meta name="description" content="填一份九题问卷申请 Conexuai 封闭 Alpha 内测。页面不接任何第三方表单或统计服务。">
+<link rel="canonical" href="https://conexuai.com/apply/">
+<link rel="alternate" hreflang="zh-CN" href="https://conexuai.com/apply/">
+<link rel="alternate" hreflang="en" href="https://conexuai.com/en/apply/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="申请内测 · Conexuai">
+<meta property="og:description" content="填一份九题问卷申请 Conexuai 封闭 Alpha 内测。页面不接任何第三方表单或统计服务。">
+<meta property="og:url" content="https://conexuai.com/apply/">
+<meta property="og:image" content="https://conexuai.com/assets/img/og.png">
+<link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+<link rel="stylesheet" href="/assets/tokens.css">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<header class="site-head">
+  <a class="brand" href="/">
+    <picture>
+      <source srcset="/assets/img/wordmark-reverse.svg" media="(prefers-color-scheme: dark)">
+      <img src="/assets/img/wordmark-primary.svg" alt="Conexuai" height="20">
+    </picture>
+  </a>
+  <nav>
+        <a href="/">首页</a>
+        <a href="/apply/" aria-current="page">申请内测</a>
+        <a href="/download/">下载</a>
+        <a href="/security/">安全与隐私</a>
+        <a href="/terms/">内测协议</a>
+  </nav>
+  <a class="lang" href="/en/apply/" hreflang="en">EN</a>
+</header>
+<main id="main">
+  <div class="wrap prose">
+    <h1>申请内测</h1>
+    <p class="hint">九道题，约两分钟。我们人工审核后把邀请码发到你留的邮箱。</p>
+
+    <form class="card" method="post" action="/api/apply" id="apply-form">
+      <!-- honeypot：给机器人填的。人看不见也 tab 不到；填了就静默丢弃，不告诉对方为什么 -->
+      <div class="trap" aria-hidden="true"><label>不要填这一栏<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+
+      <fieldset>
+        <legend>1. 你常用的 AI Agent</legend>
+        <p class="hint">可多选。</p>
+      <div class="opts">
+        <label class="opt"><input type="checkbox" name="q1_agents" value="claude"><span>Claude</span></label>
+        <label class="opt"><input type="checkbox" name="q1_agents" value="codex"><span>Codex</span></label>
+        <label class="opt"><input type="checkbox" name="q1_agents" value="cursor"><span>Cursor</span></label>
+        <label class="opt"><input type="checkbox" name="q1_agents" value="kimi"><span>Kimi</span></label>
+        <label class="opt"><input type="checkbox" name="q1_agents" value="deepseek"><span>DeepSeek</span></label>
+        <label class="opt"><input type="checkbox" name="q1_agents" value="grok"><span>Grok</span></label>
+        <label class="opt"><input type="checkbox" name="q1_agents" value="antigravity"><span>Antigravity</span></label>
+        <label class="opt"><input type="checkbox" name="q1_agents" value="glm"><span>GLM</span></label>
+        <label class="opt"><input type="checkbox" name="q1_agents" value="other"><span>其他</span></label>
+      </div>
+        <label>其他（请注明）<input type="text" name="q1_other" maxlength="80"></label>
+        <p class="hint">其中你会<strong>同时</strong>用来做一件事的有几个？</p>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="q1_concurrent" value="1"><span>1 个</span></label>
+        <label class="opt"><input type="radio" name="q1_concurrent" value="2"><span>2 个</span></label>
+        <label class="opt"><input type="radio" name="q1_concurrent" value="3plus"><span>3 个及以上</span></label>
+      </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>2. 主要使用形态</legend>
+        <p class="hint">可多选。</p>
+      <div class="opts">
+        <label class="opt"><input type="checkbox" name="q2_form" value="desktop"><span>桌面客户端</span></label>
+        <label class="opt"><input type="checkbox" name="q2_form" value="web"><span>网页</span></label>
+        <label class="opt"><input type="checkbox" name="q2_form" value="ide"><span>IDE 内</span></label>
+        <label class="opt"><input type="checkbox" name="q2_form" value="cli"><span>CLI</span></label>
+      </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. 操作系统</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="q3_os" value="win11"><span>Windows 11</span></label>
+        <label class="opt"><input type="radio" name="q3_os" value="win10"><span>Windows 10</span></label>
+        <label class="opt"><input type="radio" name="q3_os" value="other"><span>其他</span></label>
+      </div>
+        <label>其他（请注明）<input type="text" name="q3_other" maxlength="80"></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>4. 多 Agent 协作时最大的痛点</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="q4_pain" value="paste"><span>来回粘贴</span></label>
+        <label class="opt"><input type="radio" name="q4_pain" value="unknown"><span>不知道谁做完了</span></label>
+        <label class="opt"><input type="radio" name="q4_pain" value="lost"><span>换账号或换机丢历史</span></label>
+        <label class="opt"><input type="radio" name="q4_pain" value="inconsistent"><span>结果不一致没人纠错</span></label>
+        <label class="opt"><input type="radio" name="q4_pain" value="other"><span>其他</span></label>
+      </div>
+        <label>其他（请注明）<input type="text" name="q4_other" maxlength="120"></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>5. 最希望这类产品替你解决的一件事</legend>
+        <label><textarea name="q5_wish" maxlength="600"></textarea></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>6. 如果这类产品收费，你能接受的形式</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="q6_pricing" value="onetime"><span>一次性买断</span></label>
+        <label class="opt"><input type="radio" name="q6_pricing" value="monthly"><span>月订阅</span></label>
+        <label class="opt"><input type="radio" name="q6_pricing" value="yearly"><span>年订阅</span></label>
+        <label class="opt"><input type="radio" name="q6_pricing" value="freeonly"><span>只用免费版</span></label>
+      </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>7. 愿意参加 2 周内测并同意保密</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="q7_join" value="yes"><span>是</span></label>
+        <label class="opt"><input type="radio" name="q7_join" value="no"><span>否</span></label>
+      </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>8. 愿意接受一次 20 分钟访谈</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="q8_interview" value="yes"><span>是</span></label>
+        <label class="opt"><input type="radio" name="q8_interview" value="no"><span>否</span></label>
+      </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>9. 联系方式</legend>
+        <label class="req">邮箱<input type="email" name="q9_email" required autocomplete="email" maxlength="160"></label>
+        <label>所在国家 / 时区（选填）<input type="text" name="q9_region" maxlength="80"></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>同意条款</legend>
+        <label class="opt">
+          <input type="checkbox" name="agree" value="1" required>
+          <span class="req">我已阅读并同意<a href="/terms/">内测协议（保密 + 许可）</a>与<a href="/security/">安全与隐私声明</a></span>
+        </label>
+        <p class="hint">内测参与者在正式版可享优惠（具体形式另行公布）。</p>
+      </fieldset>
+
+      <!-- 人机校验：Cloudflare Turnstile（托管方反滥用组件）。
+           站点密钥在部署时填进 data-sitekey；未填时这一块不渲染，表单照常可提交——
+           不因为反滥用组件没配好就把人挡在门外。 -->
+      <div class="cf-turnstile" data-sitekey="" data-appearance="interaction-only"></div>
+
+      <p><button class="btn btn-primary" type="submit">提交申请</button></p>
+      <p class="hint" id="apply-note">提交后页面会显示回执。我们只收这份问卷与你的邮箱，不接任何第三方表单或统计服务。</p>
+    </form>
+
+    <h2>提交之后会发生什么</h2>
+    <ol>
+      <li>申请写入我们自己的 Cloudflare KV 存储，保留 180 天后自动删除。</li>
+      <li><strong>Alpha 期不经任何邮件服务转发</strong>：我们直接查阅申请列表，人工审核。</li>
+      <li>通过后，我们把邀请码与下载说明发到你留的邮箱。</li>
+    </ol>
+    <p class="hint">详见<a href="/security/">安全与隐私声明</a>第七节。</p>
+  </div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <nav>
+        <a href="/apply/">申请内测</a>
+        <a href="/download/">下载</a>
+        <a href="/security/">安全与隐私</a>
+        <a href="/terms/">内测协议</a>
+    </nav>
+    <p>Conexuai · 封闭 Alpha 内测<br>内测期不收费。本站不含任何统计脚本。</p>
+    <p class="legal">Conexuai 及其标识为其所有者的标识。Claude、Codex、Cursor、Kimi、DeepSeek、Grok、Antigravity、GLM 等名称与标识为各自所有者的商标，与本产品无隶属或背书关系。</p>
+  </div>
+</footer>
+<script src="/assets/apply.js" defer></script>
+</body>
+</html>

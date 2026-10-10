@@ -1,0 +1,80 @@
+/* ==========================================================================
+ * Conexuai · 品牌令牌
+ * 来源：Conexuai 品牌圣经 v1.1 导出件 tokens.css（逐字原样）
+ * 取用日：2026-09-29 ｜ 源文件 SHA-256：82c0972f1ca8...（完整值记在仓内运维一页）
+ * 站点自有的语义一律加 --site- 前缀，写在 site.css 里，不改这份。
+ * ========================================================================== */
+
+/* Conexuai UI Tokens — generated from Brand Bible v1 / TOKENS.md */
+/* Wordmark = custom SVG only. UI = Outfit + Geist Mono. */
+:root {
+  --color-bg: #F7F8F7;
+  --color-bg-inverse: #17181A;
+  --color-fg: #17181A;
+  --color-fg-inverse: #F7F8F7;
+  --color-accent: #FF4A1D;
+  --color-muted: #6B6E73;
+  --color-border: #D8DAD8;
+  --color-success: #2F9E6B;
+  --color-warn: #D97706;
+  --color-danger: #DC2626;
+  --font-sans: "Outfit", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Geist Mono", "IBM Plex Mono", ui-monospace, monospace;
+  --type-display-size: 40px;
+  --type-display-rem: 2.5rem;
+  --type-display-weight: 600;
+  --type-display-line-height: 1.15;
+  --type-display-tracking: -0.02em;
+  --type-title-size: 24px;
+  --type-title-rem: 1.5rem;
+  --type-title-weight: 600;
+  --type-title-line-height: 1.25;
+  --type-title-tracking: -0.015em;
+  --type-body-size: 16px;
+  --type-body-rem: 1.0rem;
+  --type-body-weight: 400;
+  --type-body-line-height: 1.55;
+  --type-body-tracking: 0;
+  --type-caption-size: 13px;
+  --type-caption-rem: 0.8125rem;
+  --type-caption-weight: 500;
+  --type-caption-line-height: 1.4;
+  --type-caption-tracking: 0.01em;
+  --type-mono-size: 13px;
+  --type-mono-rem: 0.8125rem;
+  --type-mono-weight: 400;
+  --type-mono-line-height: 1.45;
+  --type-mono-tracking: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
+  --space-8: 48px;
+  --space-9: 64px;
+  --space-10: 80px;
+  --space-11: 96px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  --elevation-0: none;
+  --elevation-1: 0 1px 2px rgba(23,24,26,0.06);
+  --elevation-2: 0 4px 12px rgba(23,24,26,0.08);
+  --elevation-3: 0 8px 24px rgba(23,24,26,0.10);
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+  --focus-ring-color: #FF4A1D;
+  --chrome-nav-top: 56px;
+  --chrome-toolbar: 48px;
+  --chrome-tab: 40px;
+  --chrome-nav-side: 240px;
+  --chrome-nav-side-collapsed: 64px;
+}
+
+:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}

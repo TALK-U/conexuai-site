@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>安全与隐私声明 · Conexuai</title>
+<meta name="description" content="Conexuai 的数据去向、网络行为、口令边界与申请表单处理方式；每一句都能指回实现。">
+<link rel="canonical" href="https://conexuai.com/security/">
+<link rel="alternate" hreflang="zh-CN" href="https://conexuai.com/security/">
+<link rel="alternate" hreflang="en" href="https://conexuai.com/en/security/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="安全与隐私声明 · Conexuai">
+<meta property="og:description" content="Conexuai 的数据去向、网络行为、口令边界与申请表单处理方式；每一句都能指回实现。">
+<meta property="og:url" content="https://conexuai.com/security/">
+<meta property="og:image" content="https://conexuai.com/assets/img/og.png">
+<link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+<link rel="stylesheet" href="/assets/tokens.css">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<header class="site-head">
+  <a class="brand" href="/">
+    <picture>
+      <source srcset="/assets/img/wordmark-reverse.svg" media="(prefers-color-scheme: dark)">
+      <img src="/assets/img/wordmark-primary.svg" alt="Conexuai" height="20">
+    </picture>
+  </a>
+  <nav>
+        <a href="/">首页</a>
+        <a href="/apply/">申请内测</a>
+        <a href="/download/">下载</a>
+        <a href="/security/" aria-current="page">安全与隐私</a>
+        <a href="/terms/">内测协议</a>
+  </nav>
+  <a class="lang" href="/en/security/" hreflang="en">EN</a>
+</header>
+<main id="main">
+  <div class="wrap prose">
+    <h1>安全与隐私声明</h1>
+    <p class="hint">Alpha 版 · 2026-09-29</p>
+    <p class="draft">【起草稿 · 待定稿】本页为起草稿，每一句都有对应的实现依据，
+    上线前会逐句核对无误后再发布。<strong>当前版本不作为最终承诺。</strong></p>
+
+    <h2>一、你的数据在哪里</h2>
+    <ol>
+      <li>本软件是本地优先的桌面软件，你的全部运行数据（消息总线、群配置、日志）只保存在你自己的电脑上，目录为 <code>%APPDATA%\MAH</code>。</li>
+      <li>卸载本软件时，卸载程序会明确询问你「保留还是一并删除」本机数据，默认保留，由你决定。</li>
+    </ol>
+
+    <h2>二、网络行为</h2>
+    <ol start="3">
+      <li>本软件的内置服务只绑定本机回环地址 127.0.0.1，不对外（局域网 / 互联网）开放端口。</li>
+      <li>Alpha 版零遥测：软件不含任何使用数据统计或上报代码，不向我们的服务器发送你的使用数据，断网也能正常使用。</li>
+    </ol>
+
+    <h2>三、你的账号与凭据</h2>
+    <ol start="5">
+      <li>本软件不代管你在各家 AI 服务商的账号，不经手、不存储你的任何 API 密钥或密码；任务派发只经过你本机的总线文件。</li>
+    </ol>
+
+    <h2>四、本机账户口令</h2>
+    <ol start="6">
+      <li>本机登录口令只以不可逆的派生验证物（scrypt 哈希）形式保存在你自己的电脑上，口令本身任何时候都不落盘、不进日志、不进总线；校验只在本机主进程内完成。</li>
+      <li><strong>这个口令锁的是界面，不是磁盘上的数据。</strong>本产品数据全本地明文存放；懂行的人在同一台机器上绕开界面直接读文件是可行的；本版本不做数据静态加密，也不暗示做了。</li>
+      <li><strong>口令无法找回。</strong>没有云、没有邮箱、没有密保问题——这是「数据全本地、不经手」的直接代价；忘记口令的补救只有删除 <code>account.json</code> 重建账户，<strong>你的数据不受影响</strong>（账户与数据是两件事）。</li>
+      <li><strong>「保持登录」的含义</strong>：它表示「下次启动跳过登录页」，不是「记住口令」；关掉后立即恢复每次启动校验口令。</li>
+    </ol>
+
+    <h2>五、日志与崩溃信息</h2>
+    <ol start="10">
+      <li>本软件日志只记录文件名与错误信息，不记录你的消息正文。</li>
+    </ol>
+
+    <h2>六、安装与更新</h2>
+    <ol start="11">
+      <li>开机自启默认关闭，只有你在设置中明确打开才会写入系统启动项；卸载时该启动项被一并清除。</li>
+      <li>官网发布的每个安装包均附带 SHA-256 校验值与校验方法说明，下载后你可自行比对，确认包体未被篡改。</li>
+    </ol>
+
+    <h2>七、官网申请表单</h2>
+    <ol start="13">
+      <li>你在<a href="/apply/">申请内测</a>页提交的信息仅为：问卷回答与你的邮箱；该表单不接任何第三方表单服务或统计 SDK，页面不含统计脚本。</li>
+      <li>申请页使用 Cloudflare Turnstile 做人机校验（托管方反滥用组件，用于拦截机器人提交）；除此之外页面无其他第三方脚本。</li>
+      <li>申请数据经 Cloudflare Pages Functions 写入 KV 存储，<strong>180 天后自动删除</strong>；用途仅为内测资格审核与通知，不用于其他用途。
+      <strong>Alpha 期不经任何邮件服务转发</strong>：审核由我们直接查阅申请列表进行，邀请邮件由人工发出。</li>
+    </ol>
+
+    <h2>八、漏洞响应</h2>
+    <ol start="16">
+      <li>如果你发现安全漏洞，请通过内测渠道或官网公布的联系方式报告；我们承诺 <strong>48 小时内确认收悉</strong>。</li>
+    </ol>
+  </div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <nav>
+        <a href="/apply/">申请内测</a>
+        <a href="/download/">下载</a>
+        <a href="/security/">安全与隐私</a>
+        <a href="/terms/">内测协议</a>
+    </nav>
+    <p>Conexuai · 封闭 Alpha 内测<br>内测期不收费。本站不含任何统计脚本。</p>
+    <p class="legal">Conexuai 及其标识为其所有者的标识。Claude、Codex、Cursor、Kimi、DeepSeek、Grok、Antigravity、GLM 等名称与标识为各自所有者的商标，与本产品无隶属或背书关系。</p>
+  </div>
+</footer>
+</body>
+</html>
