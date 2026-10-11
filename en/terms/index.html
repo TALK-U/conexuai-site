@@ -13,39 +13,47 @@
 <meta property="og:description" content="Conexuai closed Alpha beta agreement: confidentiality, prohibited conduct, watermark tracing, your data, withdrawal.">
 <meta property="og:url" content="https://conexuai.com/en/terms/">
 <meta property="og:image" content="https://conexuai.com/assets/img/og.png">
+<meta name="color-scheme" content="light dark">
 <link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+<script src="/assets/boot.js"></script>
+<link rel="preload" href="/assets/fonts/outfit-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/outfit-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/outfit-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/geist-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/tokens.css">
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/home.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-head">
-  <a class="brand" href="/en/">
-    <picture>
-      <source srcset="/assets/img/wordmark-reverse.svg" media="(prefers-color-scheme: dark)">
-      <img src="/assets/img/wordmark-primary.svg" alt="Conexuai" height="20">
-    </picture>
+<header class="hd">
+  <a class="brand" href="/en/" aria-label="Conexuai">
+    <img class="on-light" src="/assets/img/wordmark-primary.svg" alt="Conexuai" width="181" height="22">
+    <img class="on-dark" src="/assets/img/wordmark-reverse.svg" alt="Conexuai" width="186" height="26">
+    <span class="tagline" aria-label="The AI-Native Nexus"><span>T</span><span>h</span><span>e</span><span>&nbsp;</span><span>A</span><span>I</span><span>-</span><span>N</span><span>a</span><span>t</span><span>i</span><span>v</span><span>e</span><span>&nbsp;</span><span>N</span><span>e</span><span>x</span><span>u</span><span>s</span></span>
   </a>
-  <nav>
-        <a href="/en/">Home</a>
-        <a href="/en/apply/">Apply</a>
-        <a href="/en/download/">Download</a>
-        <a href="/en/security/">Security & Privacy</a>
-        <a href="/en/terms/" aria-current="page">Beta Agreement</a>
+  <nav class="nav">
+    <span class="nav-links">
+        <a href="/en/#how">How it works</a>
+        <a href="/en/#diff">How it's different</a>
+        <a href="/en/#data">Your data</a>
+        <a href="/en/#story">How it was built</a>
+    </span>
+    <span class="tools">
+      <a class="tool" id="lang" href="/terms/" hreflang="zh-CN" aria-label="Switch language">中 / EN</a>
+      <button class="tool tool-icon" id="theme" type="button" aria-label="Toggle light / dark mode"><svg class="on-light" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="on-dark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </span>
+    <a class="btn btn-primary cta-sm" href="/en/apply/">Apply for Beta</a>
   </nav>
-  <a class="lang" href="/terms/" hreflang="zh-CN">中文</a>
 </header>
-<main id="main">
-  <div class="wrap prose">
-    <h1>Beta Testing Agreement</h1>
-    <p class="hint">Alpha draft · 2026-09-29 · <strong>Reference translation — the Chinese version prevails.</strong></p>
-    <p class="draft">[Draft — pending final version] This page is a draft and is not legal advice; it will be
-    reviewed by a practising lawyer before finalisation. <strong>It must be replaced with the final version
-    before launch.</strong></p>
-
+<main id="main" class="sec">
+  <article class="prose">
+    <h1>Beta Testing Agreement (NDA + License)</h1>
+    <p class="hint">Last updated: 2026-10-10</p>
+    <p class="hint">Reference translation — the Chinese version prevails.</p>
     <p>Welcome to the closed Alpha beta test of Conexuai (the "Software"). By checking the consent box, you accept the following terms:</p>
 
-    <h2>1. License grant</h2>
+    <h2>1. License Grant</h2>
     <p>We grant you a personal, non-transferable, revocable license to evaluate the Software, solely on your own devices. The Software and all intellectual property rights in it remain owned by the developer; this Agreement transfers no rights to you.</p>
 
     <h2>2. Confidentiality</h2>
@@ -55,26 +63,26 @@
       <li>Without our prior written consent, you may not show, demonstrate, share screenshots of, or disclose any of the above to any third party.</li>
     </ul>
 
-    <h2>3. Prohibited conduct</h2>
+    <h2>3. Prohibited Conduct</h2>
     <ul>
       <li>No decompiling, disassembling, or reverse engineering of the Software (except where mandatorily permitted by applicable law);</li>
       <li>No redistribution, resale, rental, or provision of the installation package or your invitation code to others;</li>
       <li>No use of the Software or any part of it for developing competing products, competitive analysis, or publishing benchmarks.</li>
     </ul>
 
-    <h2>4. Watermark &amp; traceability notice</h2>
+    <h2>4. Watermark &amp; Traceability Notice</h2>
     <p>Beta installation packages carry a <strong>digital watermark</strong> traceable to your invitation code. You understand and agree that if a package leaks, we can trace the source of distribution via the watermark, terminate your license accordingly, and pursue liability.</p>
 
-    <h2>5. Your data</h2>
-    <p>All runtime data of the Software is stored on your own computer (see the <a href="/en/security/">Security &amp; Privacy Statement</a>). We do not gain access to your data by virtue of your participation in the beta. On uninstall, you may choose to keep or delete your local data.</p>
+    <h2>5. Your Data</h2>
+    <p>All runtime data of the Software is stored on your own computer (see the Security &amp; Privacy Statement). We do not gain access to your data by virtue of your participation in the beta. On uninstall, you may choose to keep or delete your local data.</p>
 
-    <h2>6. Beta period &amp; expiry</h2>
+    <h2>6. Beta Period &amp; Expiry</h2>
     <ul>
       <li>The Alpha beta build has an expiry date. After expiry the Software <strong>never locks any feature</strong>: on each launch it shows a one-time reminder that the beta has ended and asks you to download the latest version from our website, noting that your data remains fully intact; once dismissed, the Software works as usual.</li>
-      <li>Beta participants will enjoy a discount on the official release (the specific form to be announced separately).</li>
+      <li>Beta participants are eligible for a benefit on the official release (the specific form to be announced separately).</li>
     </ul>
 
-    <h2>7. Feedback &amp; vulnerability reports</h2>
+    <h2>7. Feedback &amp; Vulnerability Reports</h2>
     <ul>
       <li>You are welcome to submit issues, suggestions, and vulnerability reports through the designated beta channel.</li>
       <li>For security vulnerability reports, we commit to <strong>acknowledging receipt within 48 hours</strong>.</li>
@@ -84,23 +92,23 @@
     <h2>8. Withdrawal</h2>
     <p>You may withdraw from the beta at any time, without giving a reason, by deleting the installation package and your local data. We may also terminate your beta access at any time, in which case you must stop using and delete the installation package.</p>
 
-    <h2>9. Disclaimer &amp; limitation of liability</h2>
+    <h2>9. Disclaimer &amp; Limitation of Liability</h2>
     <p>The Software is an Alpha test version, provided "as is", with no warranty of being error-free, uninterrupted, or fit for any particular purpose. To the maximum extent permitted by law, we are not liable for any indirect or incidental damages arising from your use of the Software.</p>
 
     <h2>10. Miscellaneous</h2>
-    <p>This Agreement takes effect when you check the consent box. We may update this Agreement and publish the update on our website; your continued participation constitutes acceptance of the updated version. Governing law: the laws of the People's Republic of China (this jurisdiction clause to be confirmed in the final version).</p>
-  </div>
+    <p>This Agreement takes effect when you check the consent box. We may update this Agreement and publish the update on our website; your continued participation constitutes acceptance of the updated version. This Agreement is governed by the laws of the jurisdiction in which you are located; mandatory provisions of that jurisdiction's law prevail over the terms of this Agreement.</p>
+  </article>
 </main>
-<footer class="site-foot">
-  <div class="wrap">
-    <nav>
-        <a href="/en/apply/">Apply</a>
-        <a href="/en/download/">Download</a>
-        <a href="/en/security/">Security & Privacy</a>
-        <a href="/en/terms/">Beta Agreement</a>
-    </nav>
-    <p>Conexuai · Closed Alpha<br>Free during the beta. This site carries no analytics scripts.</p>
-    <p class="legal">Conexuai and its logo are marks of their owner. Claude, Codex, Cursor, Kimi, DeepSeek, Grok, Antigravity, GLM and other names and logos are trademarks of their respective owners; their use here implies no affiliation with, or endorsement by, this product.</p>
+<footer class="ft">
+  <div class="ft-l">
+    <img class="on-light" src="/assets/img/wordmark-primary.svg" alt="Conexuai" width="165" height="20">
+    <img class="on-dark" src="/assets/img/wordmark-reverse.svg" alt="Conexuai" width="169" height="24">
+    <span class="ft-tag">The AI-Native Nexus</span>
+    <p class="ft-fact">This site was coordinated, reviewed and published using Conexuai.</p>
+  </div>
+  <div class="ft-r">
+    <span>Conexuai and its logo are marks of their owner. Claude, Codex, Cursor, Kimi, DeepSeek, Grok, Antigravity, GLM and other names and logos are trademarks of their respective owners; their use here implies no affiliation with, or endorsement by, this product.</span>
+    <a href="mailto:feedback@conexuai.com">feedback@conexuai.com</a>
   </div>
 </footer>
 </body>

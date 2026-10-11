@@ -13,96 +13,105 @@
 <meta property="og:description" content="Where Conexuai keeps your data, what it does on the network, what the local password does and does not protect.">
 <meta property="og:url" content="https://conexuai.com/en/security/">
 <meta property="og:image" content="https://conexuai.com/assets/img/og.png">
+<meta name="color-scheme" content="light dark">
 <link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+<script src="/assets/boot.js"></script>
+<link rel="preload" href="/assets/fonts/outfit-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/outfit-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/outfit-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/geist-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/tokens.css">
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/home.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-head">
-  <a class="brand" href="/en/">
-    <picture>
-      <source srcset="/assets/img/wordmark-reverse.svg" media="(prefers-color-scheme: dark)">
-      <img src="/assets/img/wordmark-primary.svg" alt="Conexuai" height="20">
-    </picture>
+<header class="hd">
+  <a class="brand" href="/en/" aria-label="Conexuai">
+    <img class="on-light" src="/assets/img/wordmark-primary.svg" alt="Conexuai" width="181" height="22">
+    <img class="on-dark" src="/assets/img/wordmark-reverse.svg" alt="Conexuai" width="186" height="26">
+    <span class="tagline" aria-label="The AI-Native Nexus"><span>T</span><span>h</span><span>e</span><span>&nbsp;</span><span>A</span><span>I</span><span>-</span><span>N</span><span>a</span><span>t</span><span>i</span><span>v</span><span>e</span><span>&nbsp;</span><span>N</span><span>e</span><span>x</span><span>u</span><span>s</span></span>
   </a>
-  <nav>
-        <a href="/en/">Home</a>
-        <a href="/en/apply/">Apply</a>
-        <a href="/en/download/">Download</a>
-        <a href="/en/security/" aria-current="page">Security & Privacy</a>
-        <a href="/en/terms/">Beta Agreement</a>
+  <nav class="nav">
+    <span class="nav-links">
+        <a href="/en/#how">How it works</a>
+        <a href="/en/#diff">How it's different</a>
+        <a href="/en/#data">Your data</a>
+        <a href="/en/#story">How it was built</a>
+    </span>
+    <span class="tools">
+      <a class="tool" id="lang" href="/security/" hreflang="zh-CN" aria-label="Switch language">中 / EN</a>
+      <button class="tool tool-icon" id="theme" type="button" aria-label="Toggle light / dark mode"><svg class="on-light" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="on-dark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </span>
+    <a class="btn btn-primary cta-sm" href="/en/apply/">Apply for Beta</a>
   </nav>
-  <a class="lang" href="/security/" hreflang="zh-CN">中文</a>
 </header>
-<main id="main">
-  <div class="wrap prose">
+<main id="main" class="sec">
+  <article class="prose">
     <h1>Security &amp; Privacy Statement</h1>
-    <p class="hint">Alpha · 2026-09-29 · <strong>Reference translation — the Chinese version prevails.</strong></p>
-    <p class="draft">[Draft — pending final version] This page is a draft. Every sentence is backed by a
-    specific implementation and will be checked line by line before launch.
-    <strong>This version is not a final commitment.</strong></p>
+    <p class="hint">Last updated: 2026-10-10</p>
+    <p class="hint">Reference translation — the Chinese version prevails.</p>
 
-    <h2>1. Where your data lives</h2>
+    <h2>1. Where Your Data Lives</h2>
     <ol>
-      <li>This software is a local-first desktop application. All of your runtime data (message bus, group configuration, logs) is stored only on your own computer, in <code>%APPDATA%\MAH</code>.</li>
+      <li>This software is a local-first desktop application. All of your runtime data (message bus, group configuration, logs) is stored only on your own computer, in the <code>Conexuai</code> folder under your user application-data directory (%APPDATA%).</li>
       <li>When you uninstall, the uninstaller explicitly asks whether to keep or delete your local data; the default is to keep it. The choice is yours.</li>
     </ol>
 
-    <h2>2. Network behaviour</h2>
+    <h2>2. Network Behavior</h2>
     <ol start="3">
       <li>The software's built-in services bind only to the loopback address 127.0.0.1 and open no ports to your LAN or the internet.</li>
       <li>Alpha has zero telemetry: the software contains no usage statistics or reporting code, sends no usage data to our servers, and works fully offline.</li>
     </ol>
 
-    <h2>3. Your accounts &amp; credentials</h2>
+    <h2>3. Your Accounts &amp; Credentials</h2>
     <ol start="5">
       <li>The software does not host your accounts at AI providers, and never handles or stores your API keys or passwords. Task dispatch passes only through bus files on your own machine.</li>
     </ol>
 
-    <h2>4. Local account password</h2>
+    <h2>4. Local Account Password</h2>
     <ol start="6">
       <li>Your local login password is stored only as an irreversible derived verifier (a scrypt hash) on your own computer. The password itself is never written to disk, logs, or the bus, and verification happens only inside the local main process.</li>
       <li><strong>This password locks the interface, not the data on disk.</strong> This product stores all data locally in plain form; a technically skilled person on the same machine could bypass the interface and read the files directly. This version does not provide data-at-rest encryption and does not imply that it does.</li>
-      <li><strong>The password cannot be recovered.</strong> There is no cloud, no email reset, no security questions — this is the direct cost of "all data stays local, never handled by us". The only remedy for a forgotten password is deleting <code>account.json</code> and recreating the account; <strong>your data is not affected</strong> (account and data are two separate things).</li>
+      <li><strong>The password cannot be recovered.</strong> There is no cloud, no email reset, no security questions — this is the direct cost of "all data stays local, never handled by us". If you forget the password, you can rebuild your local account via "Forgot password?" on the login page; <strong>once rebuilt, the old account file is deleted immediately and no backup is retained</strong>. <strong>Your data is not affected</strong> (account and data are two separate things).</li>
       <li><strong>What "Keep me signed in" means</strong>: it skips the login page on next launch — it is not "remember my password". Turning it off immediately restores password verification on every launch.</li>
     </ol>
 
-    <h2>5. Logs &amp; crash information</h2>
+    <h2>5. Logs &amp; Crash Information</h2>
     <ol start="10">
       <li>The software's logs record only file names and error information, never the content of your messages.</li>
     </ol>
 
-    <h2>6. Installation &amp; updates</h2>
+    <h2>6. Installation &amp; Updates</h2>
     <ol start="11">
       <li>Launch-at-startup is off by default; a startup entry is written only when you explicitly enable it in Settings, and it is removed on uninstall.</li>
       <li>Every installer published on our website ships with a SHA-256 checksum and verification instructions, so you can confirm the package has not been tampered with.</li>
     </ol>
 
-    <h2>7. Website application form</h2>
+    <h2>7. Website Application Form (conexuai.com)</h2>
     <ol start="13">
-      <li>The <a href="/en/apply/">Apply</a> page collects only your questionnaire answers and your email address. The form uses no third-party form services or analytics SDKs, and the page contains no tracking scripts.</li>
+      <li>The "Apply for Beta" page collects only your questionnaire answers and your email address. The form uses no third-party form services or analytics SDKs, and the page contains no tracking scripts.</li>
       <li>The application page uses Cloudflare Turnstile for human verification (a hosted anti-abuse component to block bot submissions); apart from this, the page loads no other third-party scripts.</li>
-      <li>Application data is stored via Cloudflare Pages Functions in KV and <strong>deleted automatically after 180 days</strong>. It is used solely for beta qualification review and notification, and for no other purpose.
-      <strong>During Alpha nothing is forwarded through any email service</strong>: we read the application list directly, and invitation emails are sent by hand.</li>
+      <li>Application data is stored via Cloudflare Pages Functions in KV/R2 (180-day TTL). During Alpha it is <strong>not forwarded through any email service</strong>: review is performed by us directly reading the application list, and invitation emails are sent manually. Application data is used solely for beta qualification review and notification, and for no other purpose.</li>
+      <li>You may ask us at any time by email to delete your application data.</li>
     </ol>
 
-    <h2>8. Vulnerability response</h2>
-    <ol start="16">
+    <h2>8. Vulnerability Response</h2>
+    <ol start="17">
       <li>If you discover a security vulnerability, please report it through the beta channel or the contact published on our website. We commit to <strong>acknowledging receipt within 48 hours</strong>.</li>
     </ol>
-  </div>
+  </article>
 </main>
-<footer class="site-foot">
-  <div class="wrap">
-    <nav>
-        <a href="/en/apply/">Apply</a>
-        <a href="/en/download/">Download</a>
-        <a href="/en/security/">Security & Privacy</a>
-        <a href="/en/terms/">Beta Agreement</a>
-    </nav>
-    <p>Conexuai · Closed Alpha<br>Free during the beta. This site carries no analytics scripts.</p>
-    <p class="legal">Conexuai and its logo are marks of their owner. Claude, Codex, Cursor, Kimi, DeepSeek, Grok, Antigravity, GLM and other names and logos are trademarks of their respective owners; their use here implies no affiliation with, or endorsement by, this product.</p>
+<footer class="ft">
+  <div class="ft-l">
+    <img class="on-light" src="/assets/img/wordmark-primary.svg" alt="Conexuai" width="165" height="20">
+    <img class="on-dark" src="/assets/img/wordmark-reverse.svg" alt="Conexuai" width="169" height="24">
+    <span class="ft-tag">The AI-Native Nexus</span>
+    <p class="ft-fact">This site was coordinated, reviewed and published using Conexuai.</p>
+  </div>
+  <div class="ft-r">
+    <span>Conexuai and its logo are marks of their owner. Claude, Codex, Cursor, Kimi, DeepSeek, Grok, Antigravity, GLM and other names and logos are trademarks of their respective owners; their use here implies no affiliation with, or endorsement by, this product.</span>
+    <a href="mailto:feedback@conexuai.com">feedback@conexuai.com</a>
   </div>
 </footer>
 </body>

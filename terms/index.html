@@ -13,35 +13,43 @@
 <meta property="og:description" content="Conexuai 封闭 Alpha 内测协议：保密范围与期限、禁止行为、水印溯源、数据归属、退出方式。">
 <meta property="og:url" content="https://conexuai.com/terms/">
 <meta property="og:image" content="https://conexuai.com/assets/img/og.png">
+<meta name="color-scheme" content="light dark">
 <link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+<script src="/assets/boot.js"></script>
+<link rel="preload" href="/assets/fonts/outfit-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/outfit-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/outfit-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/geist-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/tokens.css">
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/home.css">
 </head>
 <body>
 <a class="skip" href="#main">跳到正文</a>
-<header class="site-head">
-  <a class="brand" href="/">
-    <picture>
-      <source srcset="/assets/img/wordmark-reverse.svg" media="(prefers-color-scheme: dark)">
-      <img src="/assets/img/wordmark-primary.svg" alt="Conexuai" height="20">
-    </picture>
+<header class="hd">
+  <a class="brand" href="/" aria-label="Conexuai">
+    <img class="on-light" src="/assets/img/wordmark-primary.svg" alt="Conexuai" width="181" height="22">
+    <img class="on-dark" src="/assets/img/wordmark-reverse.svg" alt="Conexuai" width="186" height="26">
+    <span class="tagline" aria-label="The AI-Native Nexus"><span>T</span><span>h</span><span>e</span><span>&nbsp;</span><span>A</span><span>I</span><span>-</span><span>N</span><span>a</span><span>t</span><span>i</span><span>v</span><span>e</span><span>&nbsp;</span><span>N</span><span>e</span><span>x</span><span>u</span><span>s</span></span>
   </a>
-  <nav>
-        <a href="/">首页</a>
-        <a href="/apply/">申请内测</a>
-        <a href="/download/">下载</a>
-        <a href="/security/">安全与隐私</a>
-        <a href="/terms/" aria-current="page">内测协议</a>
+  <nav class="nav">
+    <span class="nav-links">
+        <a href="/#how">它怎么工作</a>
+        <a href="/#diff">它和别的不一样</a>
+        <a href="/#data">数据在你这</a>
+        <a href="/#story">它怎么做出来的</a>
+    </span>
+    <span class="tools">
+      <a class="tool" id="lang" href="/en/terms/" hreflang="en" aria-label="切换语言">中 / EN</a>
+      <button class="tool tool-icon" id="theme" type="button" aria-label="切换深浅模式"><svg class="on-light" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="on-dark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </span>
+    <a class="btn btn-primary cta-sm" href="/apply/">申请内测</a>
   </nav>
-  <a class="lang" href="/en/terms/" hreflang="en">EN</a>
 </header>
-<main id="main">
-  <div class="wrap prose">
+<main id="main" class="sec">
+  <article class="prose">
     <h1>内测协议（保密 + 许可）</h1>
-    <p class="hint">Alpha 版草稿 · 2026-09-29</p>
-    <p class="draft">【起草稿 · 待定稿】本页为起草稿，不构成法律意见，定稿前会请执业律师过目。
-    <strong>上线前必须替换为定稿。</strong></p>
-
+    <p class="hint">最近更新：2026-10-10</p>
     <p>欢迎你参加 Conexuai（下称「本软件」）的封闭 Alpha 内测。勾选同意即表示你接受以下条款：</p>
 
     <h2>1. 许可范围</h2>
@@ -49,7 +57,7 @@
 
     <h2>2. 保密</h2>
     <ul>
-      <li>保密范围：本软件的安装包、界面、功能、文档、你在内测中获知的未公开信息，以及内测群 / 渠道中的讨论内容。</li>
+      <li>保密范围：本软件的安装包、界面、功能、文档、你在内测中获知的未公开信息，以及内测群/渠道中的讨论内容。</li>
       <li>保密期限：自你获得安装包起，至对应版本公开发布之日止；未公开发布的信息保密至我们书面解除为止。</li>
       <li>未经我们书面同意，不得向任何第三方展示、演示、截图外传或透露上述内容。</li>
     </ul>
@@ -65,7 +73,7 @@
     <p>内测安装包带有可追溯到你邀请码的<strong>数字水印</strong>。你理解并同意：若安装包外流，我们可凭水印追溯到分发来源，并据此终止许可、追究责任。</p>
 
     <h2>5. 你的数据</h2>
-    <p>本软件的全部运行数据保存在你自己的电脑上（详见<a href="/security/">安全与隐私声明</a>）。我们不会因为你参加内测而获得你的数据。卸载时你可选择保留或删除本机数据。</p>
+    <p>本软件的全部运行数据保存在你自己的电脑上（详见《安全与隐私声明》）。我们不会因为你参加内测而获得你的数据。卸载时你可选择保留或删除本机数据。</p>
 
     <h2>6. 内测期限与到期</h2>
     <ul>
@@ -87,19 +95,20 @@
     <p>本软件为 Alpha 测试版，按「现状」提供，不保证无错误、不中断或适用于任何特定用途。在法律允许的最大范围内，我们不对使用本软件造成的任何间接、附带损失承担责任。</p>
 
     <h2>10. 其他</h2>
-    <p>本协议自你勾选同意时生效。我们可能更新本协议并在官网公布；你继续参加内测视为接受更新后的版本。本协议适用中华人民共和国法律（本条管辖约定以定稿版本为准）。</p>
-  </div>
+    <p>本协议自你勾选同意时生效。我们可能更新本协议并在官网公布；你继续参加内测视为接受更新后的版本。本协议适用你所在地的法律；你所在地的强制性法律规定优先于本协议的约定。</p>
+  </article>
 </main>
-<footer class="site-foot">
-  <div class="wrap">
-    <nav>
-        <a href="/apply/">申请内测</a>
-        <a href="/download/">下载</a>
-        <a href="/security/">安全与隐私</a>
-        <a href="/terms/">内测协议</a>
-    </nav>
-    <p>Conexuai · 封闭 Alpha 内测<br>内测期不收费。本站不含任何统计脚本。</p>
-    <p class="legal">Conexuai 及其标识为其所有者的标识。Claude、Codex、Cursor、Kimi、DeepSeek、Grok、Antigravity、GLM 等名称与标识为各自所有者的商标，与本产品无隶属或背书关系。</p>
+<footer class="ft">
+  <div class="ft-l">
+    <img class="on-light" src="/assets/img/wordmark-primary.svg" alt="Conexuai" width="165" height="20">
+    <img class="on-dark" src="/assets/img/wordmark-reverse.svg" alt="Conexuai" width="169" height="24">
+    <span class="ft-tag">The AI-Native Nexus</span>
+    <p class="ft-cn">共同连接，智能共生</p>
+    <p class="ft-fact">本网站由 Conexuai 自行协同、审核并构建上线。</p>
+  </div>
+  <div class="ft-r">
+    <span>Conexuai 及其标识为其所有者的标识。Claude、Codex、Cursor、Kimi、DeepSeek、Grok、Antigravity、GLM 等名称与标识为各自所有者的商标，与本产品无隶属或背书关系。</span>
+    <a href="mailto:feedback@conexuai.com">feedback@conexuai.com</a>
   </div>
 </footer>
 </body>
