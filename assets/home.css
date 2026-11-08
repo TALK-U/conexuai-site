@@ -86,8 +86,7 @@
 :root[data-theme="dark"] .on-dark { display: block !important; }
 
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0; background: var(--bg); color: var(--fg);
   font-family: var(--sans); font-size: 16px; line-height: 1.55;
@@ -282,7 +281,6 @@ section[id] { scroll-margin-top: 8px; }
 .ft-l img { height: 20px; width: auto; }
 .ft-l img.on-dark { height: 23.5px; margin: -1.75px; }
 .ft-tag { font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
-.ft-cn { font-size: 16px; font-weight: 500; }
 .ft-fact { margin-top: 6px; font-size: 13px; color: var(--fg-2); }
 .ft-r { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; font-size: 12px; color: var(--muted); text-align: right; }
 .ft-r span { max-width: 420px; line-height: 1.5; }
@@ -291,7 +289,6 @@ section[id] { scroll-margin-top: 8px; }
 
 /* ---- 窄屏：对齐手机端板；点击目标不小于 44px ---- */
 @media (max-width: 959px) {
-  .nav-links { display: none; }
   .nav { gap: 8px; flex-wrap: nowrap; }
 }
 @media (max-width: 719px) {

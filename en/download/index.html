@@ -12,28 +12,48 @@
 <meta property="og:title" content="Download · Conexuai">
 <meta property="og:description" content="Redeem your invitation code for a time-limited download link and verify the published SHA-256.">
 <meta property="og:url" content="https://conexuai.com/en/download/">
-<meta property="og:image" content="https://conexuai.com/assets/img/og.png">
-<link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+<meta property="og:image" content="https://conexuai.com/assets/img/og.png?v=20261107">
+<link rel="icon" href="/assets/img/favicon.ico?v=20261107" sizes="any">
+<link rel="icon" href="/assets/img/favicon.svg?v=20261107" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png?v=20261107">
+<meta name="color-scheme" content="light dark">
+<script src="/assets/boot.js"></script>
 <link rel="stylesheet" href="/assets/tokens.css">
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/nav.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-head">
-  <a class="brand" href="/en/">
-    <picture>
-      <source srcset="/assets/img/wordmark-reverse.svg" media="(prefers-color-scheme: dark)">
-      <img src="/assets/img/wordmark-primary.svg" alt="Conexuai" height="20">
-    </picture>
+<header class="hd">
+  <a class="brand" href="/en/" aria-label="Conexuai">
+    <span class="logo">
+      <img class="on-light" src="/assets/img/lockup-h-light.svg?v=20261107h1" alt="Conexuai" width="199.519" height="22.013">
+      <img class="on-dark" src="/assets/img/lockup-h-dark.svg?v=20261107h1" alt="Conexuai" width="199.519" height="22.013">
+    </span>
   </a>
-  <nav>
+  <nav class="nav">
+    <button class="tool tool-icon nav-toggle" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="Open menu" data-open-label="Open menu" data-close-label="Close menu"><svg class="icon-open" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="icon-close" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div class="nav-panel" id="nav-panel">
+      <span class="nav-links">
         <a href="/en/">Home</a>
         <a href="/en/apply/">Apply</a>
         <a href="/en/download/" aria-current="page">Download</a>
         <a href="/en/security/">Security & Privacy</a>
         <a href="/en/terms/">Beta Agreement</a>
+      </span>
+      <span class="nav-anchors">
+        <a href="/en/#how">How it works</a>
+        <a href="/en/#diff">How it's different</a>
+        <a href="/en/#data">Your data</a>
+        <a href="/en/#story">How it was built</a>
+      </span>
+      <a class="btn btn-primary cta-sm" href="/en/apply/">Apply for Beta</a>
+    </div>
+    <span class="tools">
+      <a class="tool" id="lang" href="/download/" hreflang="zh-CN" aria-label="Switch language">中 / EN</a>
+      <button class="tool tool-icon" id="theme" type="button" aria-label="Toggle light / dark mode"><svg class="on-light" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="on-dark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </span>
   </nav>
-  <a class="lang" href="/download/" hreflang="zh-CN">中文</a>
 </header>
 <main id="main">
   <div class="wrap prose">

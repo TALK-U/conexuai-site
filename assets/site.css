@@ -7,8 +7,8 @@
  * 字体：**不引任何 CDN**。令牌里写的 Outfit / Geist Mono 没有被加载，实际落到系统栈的下一档。
  * 想真用 Outfit 得自托管字体文件（OFL 许可允许），那会给仓库加几百 KB 二进制，本期不做。
  *
- * 两态：只跟随系统 prefers-color-scheme。不放切换器——切换器要 JS +
- * localStorage + 防闪烁内联脚本，为一个五页宣传站付出的复杂度不成比例。
+ * 两态：没有 data-theme 时跟随系统 prefers-color-scheme。
+ * 页头按钮写入 localStorage 后，boot.js 在首帧前设 data-theme，下面的属性选择器接上。
  *
  * 对比度口径与产品侧一致：正文 ≥4.5:1、非文本 ≥3:1；**accent 底上的字用冷炭**
  * （圣经写的纸白字在 #FF4A1D 上实测 3.35:1 不达标）。
@@ -32,7 +32,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: var(--color-bg-inverse);
     --fg: var(--color-fg-inverse);
     /* 冷炭底上的 #6B6E73 只有 2.6:1，深色态把中性字提亮到 #9A9EA4（实测 5.4:1） */
@@ -42,6 +42,25 @@
     --surface-2: #26282b;
     color-scheme: dark;
   }
+}
+:root[data-theme="light"] {
+  --bg: var(--color-bg);
+  --fg: var(--color-fg);
+  --muted: var(--color-muted);
+  --border: var(--color-border);
+  --surface: #ffffff;
+  --surface-2: #eff1ef;
+  --on-accent: #17181a;
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --bg: var(--color-bg-inverse);
+  --fg: var(--color-fg-inverse);
+  --muted: #9a9ea4;
+  --border: #2f3134;
+  --surface: #1d1f22;
+  --surface-2: #26282b;
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }

@@ -12,36 +12,50 @@
 <meta property="og:title" content="Conexuai · The AI-Native Nexus">
 <meta property="og:description" content="Conexuai is the nexus between you and your AI Agents. Put Claude, Cursor, Kimi, Codex… in one group: you hand out the work, they split it, review each other and report back. You just make the call.">
 <meta property="og:url" content="https://conexuai.com/en/">
-<meta property="og:image" content="https://conexuai.com/assets/img/og.png">
+<meta property="og:image" content="https://conexuai.com/assets/img/og.png?v=20261107">
 <meta name="color-scheme" content="light dark">
-<link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/img/favicon.ico?v=20261107" sizes="any">
+<link rel="icon" href="/assets/img/favicon.svg?v=20261107" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png?v=20261107">
 <script src="/assets/boot.js"></script>
 <link rel="preload" href="/assets/fonts/outfit-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/outfit-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/outfit-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/geist-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/home.css">
+<link rel="stylesheet" href="/assets/nav.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="hd">
-  <a class="brand" href="#top" aria-label="Conexuai">
-    <img class="on-light" src="/assets/img/wordmark-primary.svg" alt="Conexuai" width="181" height="22">
-    <img class="on-dark" src="/assets/img/wordmark-reverse.svg" alt="Conexuai" width="186" height="26">
-    <span class="tagline" aria-label="The AI-Native Nexus"><span>T</span><span>h</span><span>e</span><span>&nbsp;</span><span>A</span><span>I</span><span>-</span><span>N</span><span>a</span><span>t</span><span>i</span><span>v</span><span>e</span><span>&nbsp;</span><span>N</span><span>e</span><span>x</span><span>u</span><span>s</span></span>
+  <a class="brand" href="/en/" aria-label="Conexuai">
+    <span class="logo">
+      <img class="on-light" src="/assets/img/lockup-h-light.svg?v=20261107h1" alt="Conexuai" width="199.519" height="22.013">
+      <img class="on-dark" src="/assets/img/lockup-h-dark.svg?v=20261107h1" alt="Conexuai" width="199.519" height="22.013">
+    </span>
   </a>
   <nav class="nav">
-    <span class="nav-links">
+    <button class="tool tool-icon nav-toggle" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="Open menu" data-open-label="Open menu" data-close-label="Close menu"><svg class="icon-open" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="icon-close" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div class="nav-panel" id="nav-panel">
+      <span class="nav-links">
+        <a href="/en/" aria-current="page">Home</a>
+        <a href="/en/apply/">Apply</a>
+        <a href="/en/download/">Download</a>
+        <a href="/en/security/">Security & Privacy</a>
+        <a href="/en/terms/">Beta Agreement</a>
+      </span>
+      <span class="nav-anchors">
         <a href="#how">How it works</a>
         <a href="#diff">How it's different</a>
         <a href="#data">Your data</a>
         <a href="#story">How it was built</a>
-    </span>
+      </span>
+      <a class="btn btn-primary cta-sm" href="#apply">Apply for Beta</a>
+    </div>
     <span class="tools">
       <a class="tool" id="lang" href="/" hreflang="zh-CN" aria-label="Switch language">中 / EN</a>
       <button class="tool tool-icon" id="theme" type="button" aria-label="Toggle light / dark mode"><svg class="on-light" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="on-dark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
     </span>
-    <a class="btn btn-primary cta-sm" href="#apply">Apply for Beta</a>
   </nav>
 </header>
 <main id="main">
@@ -242,9 +256,12 @@
 </main>
 <footer class="ft">
   <div class="ft-l">
-    <img class="on-light" src="/assets/img/wordmark-primary.svg" alt="Conexuai" width="165" height="20">
-    <img class="on-dark" src="/assets/img/wordmark-reverse.svg" alt="Conexuai" width="169" height="24">
-    <span class="ft-tag">The AI-Native Nexus</span>
+    <div class="ft-lock">
+      <span class="logo">
+        <img class="on-light" src="/assets/img/lockup-h-light.svg?v=20261107h2" alt="Conexuai" width="250.158" height="27.6">
+        <img class="on-dark" src="/assets/img/lockup-h-dark.svg?v=20261107h2" alt="Conexuai" width="250.158" height="27.6">
+      </span>
+    </div>
     <p class="ft-fact">This site was coordinated, reviewed and published using Conexuai.</p>
   </div>
   <div class="ft-r">
