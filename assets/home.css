@@ -102,6 +102,28 @@ h1, h2, h3, p { margin: 0; }
 .skip:focus { left: 16px; top: 16px; z-index: 10; }
 .ico { display: block; flex-shrink: 0; background: var(--ico-bg); border-radius: 3px; }
 section[id] { scroll-margin-top: 8px; }
+.sec { position: relative; }
+.to-top {
+  position: absolute;
+  top: 16px;
+  right: var(--gutter, 16px);
+  z-index: 2;
+  height: 32px;
+  padding: 0 10px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--muted);
+  font-family: var(--mono, ui-monospace, Consolas, monospace);
+  font-size: 12px;
+  line-height: 32px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.to-top:hover { color: var(--accent); }
+@media (prefers-reduced-motion: reduce) {
+  .to-top { transition: none; }
+}
 
 /* ---- 按钮 ---- */
 .btn {
@@ -229,7 +251,7 @@ section[id] { scroll-margin-top: 8px; }
 .pain p { font-size: 18px; line-height: 1.6; }
 
 /* ---- 第三屏 · 四价值卡 ---- */
-#how .in { gap: 48px; }
+#what .in { gap: 48px; }
 .h2-sub { font-size: clamp(18px, 15px + 0.76vw, 24px); font-weight: 500; color: var(--fg-2); white-space: nowrap; }
 .values { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr)); gap: clamp(14px, 11.3px + 0.67vw, 24px); }
 .value { display: flex; flex-direction: column; gap: 16px; padding: clamp(24px, 21.3px + 0.76vw, 32px); background: var(--surface); border: 1px solid var(--line); border-radius: 16px; }
@@ -254,7 +276,7 @@ section[id] { scroll-margin-top: 8px; }
 .sec-white .note { padding: 20px 24px; }
 
 /* ---- 第六段 · 故事 + 八席矩阵 ---- */
-#story .in { max-width: 900px; gap: 24px; }
+#proof .in { max-width: 900px; gap: 24px; }
 .story { font-size: clamp(16px, 14.9px + 0.29vw, 19px); line-height: 1.7; color: var(--fg-2); }
 .sign { margin-top: 8px; font-size: 16px; font-weight: 600; }
 .matrix { margin-top: 16px; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; font-family: var(--mono); font-size: 13px; }
@@ -278,9 +300,8 @@ section[id] { scroll-margin-top: 8px; }
 .ft { padding: clamp(32px, 26.1px + 1.52vw, 48px) var(--gutter); border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px; }
 .apply + .ft { border-top: 0; }
 .ft-l { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; max-width: 720px; }
-.ft-l img { height: 20px; width: auto; }
-.ft-l img.on-dark { height: 23.5px; margin: -1.75px; }
 .ft-tag { font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
+.ft-copy, .ft-local { margin: 0; font-size: 13px; line-height: 1.5; color: var(--fg-2); }
 .ft-fact { margin-top: 6px; font-size: 13px; color: var(--fg-2); }
 .ft-r { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; font-size: 12px; color: var(--muted); text-align: right; }
 .ft-r span { max-width: 420px; line-height: 1.5; }

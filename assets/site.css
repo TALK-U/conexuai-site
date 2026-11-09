@@ -135,6 +135,7 @@ code, .mono { font-family: var(--font-mono); font-size: var(--type-mono-size); }
 .site-foot a { color: inherit; }
 /* 页脚法务行：比页脚正文再小一档。它必须一直在，但不该抢走读者的注意力。 */
 .site-foot .legal { margin: var(--space-3) 0 0; max-width: var(--site-max); font-size: 12px; line-height: 1.6; }
+.site-foot .ft-copy, .site-foot .ft-local { margin: var(--space-2) 0 0; font-size: 13px; line-height: 1.5; }
 
 /* ---- 首页 ---- */
 .hero { padding: var(--space-9) 0 var(--space-7); }

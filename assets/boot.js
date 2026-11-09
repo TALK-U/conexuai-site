@@ -9,26 +9,31 @@
   var t = get('cx-theme');
   if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
 
+  try { history.scrollRestoration = 'manual'; } catch (e) {}
   var pending = null;
   try { pending = ss && ss.getItem('cx-scroll'); } catch (e) {}
   if (pending !== null && pending !== '') {
     try { ss.removeItem('cx-scroll'); } catch (e) {}
     var y = Number(pending);
     if (y >= 0 && y < 1e7) {
-      try { history.scrollRestoration = 'manual'; } catch (e) {}
-      var placed = false;
+      var done = false;
       function place() {
-        if (placed) return;
-        placed = true;
-        window.scrollTo(0, y);
+        if (done || !document.body) return;
+        var max = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+        var target = Math.min(y, max);
+        window.scrollTo(0, target);
+        if (Math.abs((window.scrollY || 0) - target) <= 1) done = true;
       }
       if (window.MutationObserver) {
-        var mo = new MutationObserver(function () {
-          if (document.body) { place(); mo.disconnect(); }
-        });
+        var mo = new MutationObserver(function () { place(); });
         mo.observe(d, { childList: true, subtree: true });
+        document.addEventListener('DOMContentLoaded', function () {
+          place();
+          mo.disconnect();
+        });
       }
       document.addEventListener('DOMContentLoaded', place);
+      window.addEventListener('load', function () { place(); done = true; });
     }
   }
 
